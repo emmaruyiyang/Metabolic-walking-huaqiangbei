@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /Volumes/SSD/huangqiangbei-walking/video-footage 2>/dev/null | head -5)",
+      "Read(//Volumes/SSD/huangqiangbei-walking/video-footage/**)",
+      "Bash(ffprobe -v quiet -print_format json -show_streams \"/Volumes/SSD/huangqiangbei-walking/video-footage/视角一Fri12：00-12：15.mp4\")",
+      "Bash(python3 -c \"import sys,json; s=[x for x in json.load\\(sys.stdin\\)['streams'] if x['codec_type']=='video'][0]; print\\(s['codec_name'], s.get\\('width'\\), s.get\\('height'\\), s.get\\('r_frame_rate'\\), s.get\\('bit_rate','N/A'\\)\\)\")",
+      "Bash(dd if=\"/Volumes/SSD/huangqiangbei-walking/video-footage/视角一Fri12：00-12：15.mp4\" of=/dev/null bs=1m count=200)",
+      "Bash(system_profiler SPUSBDataType)",
+      "Bash(git -C /Users/ruyiyang/Documents/project/Metabolic-walking-huaqiangbei log --oneline -10)"
+    ]
+  }
+}
